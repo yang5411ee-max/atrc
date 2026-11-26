@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>樓梯自己量｜新北市輔具資源中心</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="樓梯自己量">
+<meta name="theme-color" content="#C98A0B">
+<script>
+  // 從主畫面圖示打開（?launch=1 或獨立視窗模式）就直接跳到工具本體
+  var TARGET = "https://script.google.com/macros/s/AKfycbzR9jYlQ_ofwA0ZnOtUG4teVZvymUFO2xPD2BdamDuXcRLfTZSANwYLbGz10hmlrQrlPA/exec";
+  var KEY = 'atrc-params-' + location.pathname;
+  var own = new URLSearchParams(location.search); own.delete('launch');
+  try { if ([...own.keys()].length) localStorage.setItem(KEY, own.toString()); var saved = localStorage.getItem(KEY) || ''; } catch (e) { var saved = own.toString(); }
+  if (TARGET && saved) TARGET += (TARGET.indexOf('?') < 0 ? '?' : '&') + saved;
+  var launched = /[?&]launch=1/.test(location.search) || matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  if (TARGET && launched) location.replace(TARGET);
+</script>
+<style>
+  body{margin:0;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;background:#f5f6f8;color:#1d2430;
+    min-height:100vh;display:flex;align-items:center;justify-content:center}
+  .card{background:#fff;border-radius:20px;box-shadow:0 6px 24px rgba(0,0,0,.08);padding:32px 28px;max-width:360px;width:calc(100% - 48px);text-align:center}
+  img{width:112px;height:112px;border-radius:26px}
+  h1{font-size:22px;margin:16px 0 4px} .org{color:#667;font-size:14px;margin:0 0 24px}
+  a.btn{display:block;background:#C98A0B;color:#fff;text-decoration:none;font-size:18px;font-weight:700;padding:14px;border-radius:12px}
+  .tip{text-align:left;font-size:14px;color:#445;background:#f3f5f9;border-radius:12px;padding:12px 14px;margin-top:20px;line-height:1.7}
+  .warn{color:#b42318}
+</style></head><body>
+<div class="card">
+  <img src="icon-512.png" alt="">
+  <h1>樓梯自己量</h1><p class="org">新北市輔具資源中心</p>
+  <a class="btn" id="go" href="https://script.google.com/macros/s/AKfycbzR9jYlQ_ofwA0ZnOtUG4teVZvymUFO2xPD2BdamDuXcRLfTZSANwYLbGz10hmlrQrlPA/exec">開啟工具</a><script>document.getElementById("go").href=TARGET</script>
+  <div class="tip"><b>放到手機桌面</b><br>
+  Android Chrome：右上角 ⋮ →「加到主畫面」<br>
+  iPhone Safari：下方分享鍵 →「加入主畫面」<br>
+  之後點桌面圖示就會直接打開工具。</div>
+</div></body></html>
